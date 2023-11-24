@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Valen Tito</title>
+    <link rel="shortcut icon" href="IMG/Logo-VT.jpeg" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
 
     <!--Google font icon-->
@@ -17,21 +18,61 @@
     <!--Contact-->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-
+    <!--Text-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <header>
-        <span class="material-symbols-outlined">
-            person
-        </span>
-        <span class="material-symbols-outlined">
-            work
-        </span>
-        <span class="material-symbols-outlined">
-            alternate_email
-        </span>
+        <a href="#">
+            <span class="material-symbols-outlined" title="Usuario">
+                person
+            </span>
+            Perfil
+        </a>
+        <a href="#">
+            <span class="material-symbols-outlined" title="Portafolio">
+                work
+            </span>
+            Proyectos
+        </a>
+        <a href="#">
+            <span class="material-symbols-outlined">
+                import_contacts
+            </span>
+            Skill
+        </a>
+        <a href="#">
+            <span class="material-symbols-outlined" title="Contacto">
+                alternate_email
+            </span>
+            Contacto
+        </a>
     </header>
+
+    <main>
+        <div class="container-presentacion">
+            <img src="img/Foto-mia.jpg" alt="Foto mia de presentación">
+            <div class="container-txt">
+                <span>¡Hola!</span> &#128075
+                <h1>Tito Valentín</h1>
+                <p>Soy desarrollador front-end junior</p>
+            </div>
+        </div>
+
+        <div class="container-projet">
+            <h1>Proyectos personales</h1>
+            <div class="card-projet">
+                <a href="https://piedra-papel-tijera-tito.netlify.app/">
+                    <img src="img/Juego.PNG" alt="Juego de piedra-papel-tijera">
+                    <h3>piedra-papel-tijera</h3>
+                    <p></p>
+                </a>
+            </div>
+        </div>
+    </main>
 </body>
 
 </html>
