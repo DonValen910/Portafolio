@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -42,11 +43,19 @@ main {
     margin-left: 5rem;
 }
 
+h1 {
+    background: -webkit-linear-gradient(#fff, rgb(230, 173, 66));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 46px;
+    text-align: center;
+}
+
 .container-presentacion {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 50px;
+    margin: 70px 0;
 }
 
 .container-presentacion img {
@@ -58,39 +67,138 @@ main {
     margin: 30px;
 }
 
+.container-presentacion h1 {
+    text-align: left;
+}
+
 .container-txt span,
 .container-txt p {
     color: #fff;
     font-size: 19px;
 }
 
-.container-txt h1 {
-    background: -webkit-linear-gradient(#fff, rgb(230, 173, 66));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: 46px;
-}
-
-.container-projet {
+.container-project {
     display: grid;
     justify-items: center;
     margin-top: 30px;
 }
 
-.container-projet h1 {
-    background: -webkit-linear-gradient(#fff, rgb(230, 173, 66));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: 42px;
-}
-
-.card-projet {
+.card-project {
     width: 25rem;
     margin: 30px 0;
+    padding: 10px;
     background: rgb(230, 173, 66);
+    border-radius: 8px;
 }
 
-.card-projet img {
+.card-project a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #000;
+    text-decoration: none;
+    transition: .5s;
+}
+
+.card-project a:hover {
+    color: #fff;
+    transition: .5s;
+}
+
+.card-project h3 {
+    font-size: 30px;
+    padding: 20px;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.card-project p {
+    text-align: center;
+}
+
+.card-project img {
     width: 100%;
     object-fit: cover;
+    border-radius: 4px;
+}
+
+.card-project-cod {
+    border-top: 3px solid #000;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+
+.card-project-cod svg {
+    margin: 15px 0 5px 0;
+}
+
+.container-img-skill {
+    display: flex;
+    justify-content: space-around;
+}
+
+.container-img-skill img {
+    width: 13rem;
+}
+
+#img-html {
+    color: orange;
+}
+
+#img-css {
+    color: blue;
+}
+
+#img-bts {
+    color: mediumorchid;
+}
+
+#img-sass {
+    color: palevioletred;
+}
+
+#img-js {
+    color: rgb(202, 199, 15);
+}
+
+.container-contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    width: 30vw;
+}
+
+fieldset {
+    padding: 10px;
+    display: grid;
+    color: #fff;
+    font-size: 25px;
+}
+
+form input {
+    padding: 5px;
+    margin: 8px;
+    border-radius: 3px;
+    transition: .3s;
+}
+
+form input:focus {
+    transition: .3s;
+    box-shadow: 4px -3px 18px rgb(230, 173, 66);
+}
+
+.container-info {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 10px;
+}
+
+#github {
+    color: #fff;
+}
+
+#linkedIn {
+    color: #0e76a8;
 }
