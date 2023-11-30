@@ -51,6 +51,8 @@ h1 {
     text-align: center;
 }
 
+/* presentación */
+
 .container-presentacion {
     display: flex;
     justify-content: center;
@@ -76,6 +78,8 @@ h1 {
     color: #fff;
     font-size: 19px;
 }
+
+/* Project */
 
 .container-project {
     display: grid;
@@ -131,9 +135,12 @@ h1 {
     margin: 15px 0 5px 0;
 }
 
+/* Skill */
+
 .container-img-skill {
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(13rem, 4fr));
+    justify-items: center;
 }
 
 .container-img-skill img {
@@ -160,14 +167,17 @@ h1 {
     color: rgb(202, 199, 15);
 }
 
+/* Contact */
+
 .container-contact {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 3% 0 0 0;
 }
 
 form {
-    width: 30vw;
+    width: 23rem;
 }
 
 fieldset {
@@ -175,6 +185,7 @@ fieldset {
     display: grid;
     color: #fff;
     font-size: 25px;
+    margin: 0 0 8% 0;
 }
 
 form input {
@@ -201,4 +212,65 @@ form input:focus {
 
 #linkedIn {
     color: #0e76a8;
+}
+
+/* Responsive */
+
+@media (max-width: 430px) {
+    .container-presentacion {
+        flex-direction: column;
+    }
+
+    .card-project {
+        width: 19rem;
+    }
+
+    .card-project h3 {
+        font-size: 23px;
+        padding: 12px;
+    }
+
+    #skill {
+        padding: 8px;
+    }
+
+    form {
+        width: 18rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .container-presentacion img {
+        width: 16rem;
+    }
+
+    .card-project {
+        width: 17rem;
+    }
+
+    .card-project h3 {
+        font-size: 20px;
+    }
+
+    form {
+        width: 16rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .container-presentacion img {
+        width: 14rem;
+    }
+
+    .card-project {
+        width: 16rem;
+    }
+
+    .card-project h3 {
+        font-size: 19px;
+    }
+
+    form {
+        width: 15rem;
+    }
 }
