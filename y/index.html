@@ -119,9 +119,9 @@
                     <path
                         d="M12 10.523c2.46 -.826 4 -.826 4 -2.155c0 -1.366 -1.347 -1.366 -2.735 -1.366c-1.91 0 -3.352 .49 -4.537 1.748c-.848 .902 -1.027 2.449 -.153 3.307c.973 .956 3.206 1.789 2.884 3.493c-.233 1.235 -1.469 1.823 -2.617 1.202c-.782 -.424 -.454 -1.746 .626 -2.512s2.822 -.992 4.1 -.24c.98 .575 1.046 1.724 .434 2.193" />
                 </svg>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-javascript" id="img-js" width="13rem"
-                    height="13rem" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                    stroke-linecap="round" stroke-linejoin="round">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-javascript"
+                    id="img-js" width="13rem" height="13rem" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+                    fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                     <path d="M20 4l-2 14.5l-6 2l-6 -2l-2 -14.5z" />
                     <path d="M7.5 8h3v8l-2 -1" />
@@ -133,12 +133,15 @@
 
         <h1 id="contact">Contacto</h1>
         <section class="container-contact">
-            <form action="">
+            <form action="https://formspree.io/f/mvojjlyl" method="POST">
                 <fieldset>
                     <legend>Enviar formulario</legend>
-                    <input type="text" placeholder="De...">
-                    <input type="text" placeholder="Asunto">
-                    <input type="submit" value="Enviar">
+                    <input type="text" placeholder="De..." name="name" required>
+                    <textarea name="Asunto" rows="5" cols="33" placeholder="Asunto..." maxlength="400"
+                        required></textarea>
+                    <div class="container-button">
+                        <button type="submit" name="enviar">Enviar</button>
+                    </div>
                 </fieldset>
 
                 <div class="container-info">
