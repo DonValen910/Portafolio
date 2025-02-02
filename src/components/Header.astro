@@ -1,6 +1,9 @@
 ---
 import { Image } from "astro:assets";
 import YoDibujo from "../assets/yoDibujo.webp";
+import linkedin from "../assets/linkedin.svg";
+import github from "../assets/github_dark.svg";
+import CV from "../assets/cv.svg";
 ---
 
 <header class="header">
@@ -10,6 +13,40 @@ import YoDibujo from "../assets/yoDibujo.webp";
   <div class="header__text-container">
     <h1 class="header__title">Valentín Tito</h1>
     <p class="header__subtitle">Desarrollador Frontend</p>
+    <nav class="header__nav">
+      <ul class="header__nav-list">
+        <li class="header__nav-item">
+          <a
+            href="https://www.linkedin.com/in/valent%C3%ADn-tito-8601bb295/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="header__nav-link"
+          >
+            <Image src={linkedin} alt="LinkedIn" class="header__nav-image linkedin" />
+          </a>
+        </li>
+        <li class="header__nav-item">
+          <a
+            href="https://github.com/DonValen910"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="header__nav-link"
+          >
+            <Image src={github} alt="GitHub" class="header__nav-image github" />
+          </a>
+        </li>
+        <li class="header__nav-item">
+          <a
+            href="/Curriculum.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="header__nav-link"
+          >
+            <Image src={CV} alt="CV" class="header__nav-image cv" />
+          </a>
+        </li>
+      </ul>
+    </nav>
   </div>
 </header>
 
@@ -22,12 +59,12 @@ import YoDibujo from "../assets/yoDibujo.webp";
   }
 
   .header__title {
-    font-size: clamp(1.4rem, 3.5vw ,2rem);
+    font-size: clamp(1.4rem, 3.5vw, 2rem);
     margin: 0;
   }
 
   .header__subtitle {
-    font-size: clamp(1rem, 3.5vw ,1.5rem);
+    font-size: clamp(1rem, 3.5vw, 1.5rem);
     margin: 0;
   }
 
@@ -45,10 +82,36 @@ import YoDibujo from "../assets/yoDibujo.webp";
     border-radius: 50%;
     width: 6.25rem;
     height: 6.25rem;
-    transition: .3s;
+    transition: 0.3s;
   }
 
   .header__image:hover {
+    transform: scale(1.1);
+  }
+
+  .header__nav {
+    margin-top: .5rem;
+  }
+
+  .header__nav-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .header__nav-item {
+    display: grid;
+    place-items: center;
+  }
+
+  .header__nav-image {
+    width: clamp(1.6rem, 3.8vw, 2rem);
+    height: clamp(1.6rem, 3.8vw, 2rem);
+    transition: 0.3s;
+  }
+
+  .header__nav-image:hover {
     transform: scale(1.1);
   }
 </style>
