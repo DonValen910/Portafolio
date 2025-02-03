@@ -1,0 +1,56 @@
+---
+import { Image } from "astro:assets";
+import html from "../assets/skill/html.svg";
+import css from "../assets/skill/css.svg";
+import js from "../assets/skill/javascript.svg";
+import react from "../assets/skill/react_dark.svg";
+import astro from "../assets/skill/astro_dark.svg";
+import vue from "../assets/skill/vue.svg";
+import nuxt from "../assets/skill/nuxt.svg";
+---
+
+<section class="skills">
+  <h2 class="skills__title">Habilidades</h2>
+  <div class="skills__list">
+    <Image class="skills__item" src={html} alt="Imagen de HTML5" />
+    <Image class="skills__item" src={css} alt="Imagen de CSS" />
+    <Image class="skills__item" src={js} alt="Imagen de JS" />
+    <Image class="skills__item" src={astro} alt="Imagen de Astro" />
+    <Image class="skills__item" src={react} alt="Imagen de React" />
+    <Image class="skills__item" src={vue} alt="Imagen de Vue" />
+    <Image class="skills__item" src={nuxt} alt="Imagen de Nuxt" />
+  </div>
+</section>
+
+<style>
+  .skills {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0;
+    margin: 0 1.8rem;
+  }
+
+  .skills__title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .skills__list {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+  }
+
+  .skills__item {
+    width: 3.125rem;
+    height: 3.125rem;
+    transition: .4s;
+  }
+
+  .skills__item:hover {
+    transform: scale(1.3);
+  }
+</style>
