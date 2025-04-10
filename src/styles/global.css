@@ -4,7 +4,13 @@ body {
   margin: 0 auto;
 }
 
-h1, h2, h3, h4, h5, h6, p {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
   margin: 0;
   padding: 0;
   color: #fff;
@@ -22,4 +28,56 @@ ul {
 
 li {
   list-style: none;
+}
+
+:is(.html, .css, .js, .react, .vue, .nuxt) {
+  border-radius: 0.5rem;
+  padding: 0.3125rem 0;
+  transition: all 0.3s ease-in-out;
+}
+
+:is(.html, .css, .js, .react, .vue, .nuxt):hover {
+  scale: 1.05;
+}
+
+/* .html {
+  border: 0.125rem solid #E34F26*/
+    /*#EF652A*/
+  /*;
+} */
+
+.css {
+  border: 0.125rem solid #663399;
+}
+
+.css:hover {
+  box-shadow: 0 0 0.625rem #663399;
+}
+/*
+.js {
+  border: 0.125rem solid #F0DB4F;
+}
+
+.astro {
+  border: 0.125rem solid #FF5D01;
+}
+
+.react {
+  border: 0.125rem solid #58C4DC;
+}
+*/
+.vue {
+  border: 0.125rem solid #41b883;
+}
+
+.vue:hover {
+  box-shadow: 0 0 0.625rem #41b883;
+}
+
+.nuxt {
+  border: 0.125rem solid #00dc82;
+}
+
+.nuxt:hover {
+  box-shadow: 0 0 0.625rem #00dc82;
 }

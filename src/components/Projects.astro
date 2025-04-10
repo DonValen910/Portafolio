@@ -1,0 +1,138 @@
+---
+import { Image } from "astro:assets";
+import byAriana from "../assets/project/screenshotsByAriana.png";
+import css from "../assets/skill/css.svg";
+import vue from "../assets/skill/vue.svg";
+import nuxt from "../assets/skill/nuxt.svg";
+---
+
+<section class="projects">
+  <h2 class="projects__title">Proyectos</h2>
+  <div class="projects__container">
+    <article class="projects__card">
+      <a
+        href="https://by-ariana.vercel.app/"
+        target="_blank"
+        class="projects__card-link"
+      >
+        <header class="projects__card-header">
+          <Image
+            src={byAriana}
+            alt="Imagen del proyecto llamado ByAriana"
+            class="projects__card-image"
+          />
+          <h3 class="projects__card-title">ByAriana</h3>
+        </header>
+        <div class="projects__card-content">
+          <p class="projects__card-description">
+            ByAriana es una página web que muestra los servicios que hace.
+            Aprendí a usar Nuxt js y el CSS con la metodología BEM.
+          </p>
+          <span class="projects__card-cta"
+            >Para ver la página, hace click en el texto o en la imagen</span
+          >
+        </div>
+      </a>
+      <hr />
+      <footer class="projects__tech-list">
+        <div class="projects__tech-item css">
+          <Image src={css} alt="Imagen de CSS" class="projects__tech-icon" />
+          <span class="projects__tech-name">CSS</span>
+        </div>
+        <div class="projects__tech-item vue">
+          <Image src={vue} alt="Imagen de Vue" class="projects__tech-icon" />
+          <span class="projects__tech-name">Vue js</span>
+        </div>
+        <div class="projects__tech-item nuxt">
+          <Image src={nuxt} alt="Imagen de Nuxt" class="projects__tech-icon" />
+          <span class="projects__tech-name">Nuxt js</span>
+        </div>
+      </footer>
+    </article>
+  </div>
+</section>
+
+<style>
+  .projects {
+    display: grid;
+    place-items: center;
+    margin: 1rem 1.8rem;
+  }
+
+  .projects__title {
+    font-size: 2rem;
+  }
+
+  .projects__container {
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 1rem 0;
+  }
+
+  /* article + a */
+
+  .projects__card-link:hover .projects__card-title {
+    text-decoration: underline;
+  }
+
+  /* article + header */
+
+  .projects__card {
+    width: 20.3125rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+  }
+
+  .projects__card-description {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .projects__card-cta {
+    font-size: 0.8438rem;
+    color: #f1f1f1;
+  }
+
+  /* article + footer */
+
+  .projects__tech-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+  }
+
+  .projects__tech-item {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0.5rem 0;
+  }
+
+  .projects__tech-item .projects__tech-icon {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+
+  .projects__tech-name {
+    font-size: 1rem;
+    color: #f8f8f8;
+  }
+
+  .projects__card-header .projects__card-title {
+    font-size: 2rem;
+    margin: 0.5rem 0;
+  }
+
+  .projects__card-content {
+    margin: 0.5rem 0;
+  }
+
+  .projects__card-image,
+  .projects__tech-icon {
+    width: 100%;
+    height: auto;
+  }
+</style>
