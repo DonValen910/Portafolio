@@ -4,6 +4,11 @@ import html from "../assets/skill/html.svg";
 import css from "../assets/skill/css.svg";
 import js from "../assets/skill/javascript.svg";
 import astro from "../assets/skill/Astro_dark.svg";
+import git from "../assets/skill/git.svg";
+import supabase from "../assets/skill/supabase.svg";
+import typescript from "../assets/skill/typescript.svg";
+import php from "../assets/skill/php.svg";
+import mysql from "../assets/skill/mysql.svg";
 ---
 
 <section class="skills">
@@ -25,7 +30,26 @@ import astro from "../assets/skill/Astro_dark.svg";
       <Image class="skills__list-item-image" src={astro} alt="Imagen de Astro" />
       <span class="skills__list-item-text">Astro</span>
     </div>
-    
+    <div class="skills__list-item">
+      <Image class="skills__list-item-image" src={git} alt="Imagen de Git" />
+      <span class="skills__list-item-text">Git</span>
+    </div>
+    <div class="skills__list-item">
+      <Image class="skills__list-item-image" src={supabase} alt="Imagen de Supabase" />
+      <span class="skills__list-item-text">Supabase</span>
+    </div>
+    <div class="skills__list-item">
+      <Image class="skills__list-item-image" src={typescript} alt="Imagen de TypeScript" />
+      <span class="skills__list-item-text">TypeScript</span>
+    </div>
+    <div class="skills__list-item">
+      <Image class="skills__list-item-image" src={php} alt="Imagen de PHP" />
+      <span class="skills__list-item-text">PHP</span>
+    </div>
+    <div class="skills__list-item">
+      <Image class="skills__list-item-image" src={mysql} alt="Imagen de MySQL" />
+      <span class="skills__list-item-text">MySQL</span>
+    </div>
   </div>
 </section>
 
@@ -52,6 +76,7 @@ import astro from "../assets/skill/Astro_dark.svg";
   }
 
   .skills__list-item {
+    width: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
