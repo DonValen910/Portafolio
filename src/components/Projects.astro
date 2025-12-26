@@ -1,54 +1,11 @@
 ---
 import { Image } from "astro:assets";
-import byAriana from "../assets/project/screenshotsByAriana.png";
-import css from "../assets/skill/css.svg";
-import vue from "../assets/skill/vue.svg";
-import nuxt from "../assets/skill/nuxt.svg";
 ---
 
 <section class="projects">
   <h2 class="projects__title">Proyectos</h2>
   <div class="projects__container">
-    <article class="projects__card">
-      <a
-        href="https://by-ariana.vercel.app/"
-        target="_blank"
-        class="projects__card-link"
-      >
-        <header class="projects__card-header">
-          <Image
-            src={byAriana}
-            alt="Imagen del proyecto llamado ByAriana"
-            class="projects__card-image"
-          />
-          <h3 class="projects__card-title">ByAriana</h3>
-        </header>
-        <div class="projects__card-content">
-          <p class="projects__card-description">
-            ByAriana es una página web que muestra los servicios que hace.
-            Aprendí a usar Nuxt js y el CSS con la metodología BEM.
-          </p>
-          <span class="projects__card-cta"
-            >Para ver la página, hace click en el texto o en la imagen</span
-          >
-        </div>
-      </a>
-      <hr />
-      <footer class="projects__tech-list">
-        <div class="projects__tech-item css">
-          <Image src={css} alt="Imagen de CSS" class="projects__tech-icon" />
-          <span class="projects__tech-name">CSS</span>
-        </div>
-        <div class="projects__tech-item vue">
-          <Image src={vue} alt="Imagen de Vue" class="projects__tech-icon" />
-          <span class="projects__tech-name">Vue js</span>
-        </div>
-        <div class="projects__tech-item nuxt">
-          <Image src={nuxt} alt="Imagen de Nuxt" class="projects__tech-icon" />
-          <span class="projects__tech-name">Nuxt js</span>
-        </div>
-      </footer>
-    </article>
+    
   </div>
 </section>
 
