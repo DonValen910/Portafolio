@@ -1,0 +1,52 @@
+---
+import { Image } from "astro:assets";
+import Entrevista from "../assets/entrevista.webp";
+---
+
+<section class="about">
+    <h2 class="about__title">Sobre mí</h2>
+    <div class="about__content">
+        <figure class="about__figure">
+            <Image
+                class="about__image"
+                src={Entrevista}
+                alt="Foto de entrevista"
+            />
+        </figure>
+        <div class="about__description">
+            <p class="about__text">
+                Estudiante de la carrera de Diseño y Desarrollo Web en la
+                Escuela Da Vinci. Me apasiona el desarrollo frontend y disfruto
+                trabajar con tecnologías como Vue 3, que es actualmente mi
+                framework favorito.
+            </p>
+            <p class="about__text">
+                Me inicié en el desarrollo web durante la secundaria técnica,
+                donde además de aprender lógica y programación, fortalecí mi
+                <strong>adaptabilidad</strong>, <strong>trabajo en
+                grupo</strong>, <strong>organización</strong> y <strong>empatía</strong>.
+                También identifiqué debilidades como <strong>querer
+                hacer todo solo</strong>, <strong>ser autoexigente en exceso</strong> y <strong
+                >tener poca paciencia cuando algo no fluye</strong>.
+            </p>
+        </div>
+    </div>
+</section>
+
+<style>
+    .about__figure {
+        width: 350px;
+        margin-right: 1rem;
+        border-radius: 1rem;
+        overflow: hidden;
+        float: left;
+    }
+
+    .about__description {
+        font-size: 1.25rem;
+    }
+
+    .about__text:first-child {
+        margin-bottom: 1rem;
+    }
+</style>
