@@ -14,22 +14,22 @@ import mysql from "../assets/skill/mysql.svg";
 <section class="skills">
   <h2 class="skills__title">Habilidades</h2>
   <div class="skills__list">
-    <div class="skills__list-item">
+    <div class="skills__list-item skills__list-item--html">
       <Image class="skills__list-item-image" src={html} alt="Imagen de HTML5" />
       <span class="skills__list-item-text">HTML</span>
     </div>
 
-    <div class="skills__list-item">
+    <div class="skills__list-item skills__list-item--css">
       <Image class="skills__list-item-image" src={css} alt="Imagen de CSS" />
       <span class="skills__list-item-text">CSS</span>
     </div>
 
-    <div class="skills__list-item">
+    <div class="skills__list-item skills__list-item--js">
       <Image class="skills__list-item-image" src={js} alt="Imagen de JS" />
       <span class="skills__list-item-text">JavaScript</span>
     </div>
 
-    <div class="skills__list-item">
+    <div class="skills__list-item skills__list-item--astro">
       <Image
         class="skills__list-item-image"
         src={astro}
@@ -38,12 +38,12 @@ import mysql from "../assets/skill/mysql.svg";
       <span class="skills__list-item-text">Astro</span>
     </div>
 
-    <div class="skills__list-item">
+    <div class="skills__list-item skills__list-item--git">
       <Image class="skills__list-item-image" src={git} alt="Imagen de Git" />
       <span class="skills__list-item-text">Git</span>
     </div>
 
-    <div class="skills__list-item">
+    <div class="skills__list-item skills__list-item--supabase">
       <Image
         class="skills__list-item-image"
         src={supabase}
@@ -52,7 +52,7 @@ import mysql from "../assets/skill/mysql.svg";
       <span class="skills__list-item-text">Supabase</span>
     </div>
 
-    <div class="skills__list-item">
+    <div class="skills__list-item skills__list-item--typescript">
       <Image
         class="skills__list-item-image"
         src={typescript}
@@ -61,12 +61,12 @@ import mysql from "../assets/skill/mysql.svg";
       <span class="skills__list-item-text">TypeScript</span>
     </div>
 
-    <div class="skills__list-item">
+    <div class="skills__list-item skills__list-item--php">
       <Image class="skills__list-item-image" src={php} alt="Imagen de PHP" />
       <span class="skills__list-item-text">PHP</span>
     </div>
 
-    <div class="skills__list-item">
+    <div class="skills__list-item skills__list-item--mysql">
       <Image
         class="skills__list-item-image"
         src={mysql}
@@ -109,10 +109,109 @@ import mysql from "../assets/skill/mysql.svg";
     text-align: center;
     color: #f5f5f5;
     font-size: 1.2rem;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    padding: 1rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .skills__list-item::before,
+  .skills__list-item::after {
+    content: "";
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .skills__list-item::before {
+    z-index: 1;
+  }
+
+  .skills__list-item::after {
+    background: #222;
+    border-radius: 8px;
+    z-index: 2;
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
   }
 
   .skills__list-item-image {
     width: 60px;
     height: 60px;
+    position: relative;
+    z-index: 3;
+  }
+
+  .skills__list-item-text {
+    position: relative;
+    z-index: 3;
+  }
+
+  /* Animación de rotación */
+  @keyframes rotate {
+    0% {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(-360deg);
+    }
+  }
+
+  /* HTML - naranja */
+  .skills__list-item--html::before {
+    background: conic-gradient(#EF652A 0deg, #E34F26 60deg#DE4C36, transparent 120deg);
+    animation: rotate 4s linear infinite;
+  }
+
+  /* CSS - morado */
+  .skills__list-item--css::before {
+    background: conic-gradient(#663399 20deg, transparent 120deg);
+    animation: rotate 4s linear infinite;
+  }
+
+  /* JavaScript - amarillo */
+  .skills__list-item--js::before {
+    background: conic-gradient(#F0DB4F 20deg, transparent 120deg);
+    animation: rotate 4s linear infinite;
+  }
+
+  /* Astro - naranja y blanco */
+  .skills__list-item--astro::before {
+    background: conic-gradient(#FF5D01 0deg, #FFFFFF 60deg#DE4C36, transparent 120deg);
+    animation: rotate 4s linear infinite;
+  }
+
+  /* Git - rojo */
+  .skills__list-item--git::before {
+    background: conic-gradient(#DE4C36 20deg, transparent 120deg);
+    animation: rotate 4s linear infinite;
+  }
+
+  /* Supabase - verde */
+  .skills__list-item--supabase::before {
+    background: conic-gradient(#3ECF8E 0deg, #3BC889 60deg#DE4C36, transparent 120deg);
+    animation: rotate 4s linear infinite;
+  }
+
+  /* TypeScript - azul */
+  .skills__list-item--typescript::before {
+    background: conic-gradient(#3178C6 20deg, transparent 120deg);
+    animation: rotate 4s linear infinite;
+  }
+
+  /* PHP - morado grisáceo */
+  .skills__list-item--php::before {
+    background: conic-gradient(#4C588E 20deg, transparent 120deg);
+    animation: rotate 4s linear infinite;
+  }
+
+  /* MySQL - azul y naranja */
+  .skills__list-item--mysql::before {
+    background: conic-gradient(#00758F 0deg, #F29111 60deg#DE4C36, transparent 120deg);
+    animation: rotate 4s linear infinite;
   }
 </style>
