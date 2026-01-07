@@ -3,6 +3,12 @@
   --color-blanco: #e9e9e9;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   background: var(--color-negro_claro);
   max-width: 48.75rem;
@@ -33,4 +39,15 @@ ul {
 
 li {
   list-style: none;
+}
+
+section {
+  display: grid;
+  place-items: center;
+  margin: 1rem 1.8rem;
+}
+
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
