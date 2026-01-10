@@ -1,0 +1,76 @@
+---
+import { Image } from "astro:assets";
+import Escuela from "../assets/escuela.svg";
+import EscuelaFinalizada from "../assets/escuelaFinalizada.svg";
+import FlechaDerecha from "../assets/flechaDerecha.svg";
+---
+
+<section>
+    <h2 class="training__title">Formación</h2>
+    <div class="training__content">
+        <ul class="training__list">
+            <li class="training__item">
+                <figure class="training__icon">
+                    <Image src={Escuela} alt="Icono de Escuela" />
+                </figure>
+                <div class="training__description">
+                    <strong>Escuela Da Vinci</strong>
+                    <span>Diseño y Desarrollo Web (2025 - presente)</span>
+                </div>
+                <figure class="training__arrow">
+                    <Image
+                        src={FlechaDerecha}
+                        alt="Icono de Flecha Derecha"
+                    />
+                </figure>
+            </li>
+            <li class="training__item">
+                <figure class="training__icon">
+                    <Image
+                        src={EscuelaFinalizada}
+                        alt="Icono de Escuela Finalizada"
+                    />
+                </figure>
+                <div class="training__description">
+                    <strong>EEST N.° 5 de Lanús “John F. Kennedy”</strong>
+                    <span>Técnico en Programación (2018 - 2024)</span>
+                </div>
+                <figure class="training__arrow">
+                    <Image
+                        src={FlechaDerecha}
+                        alt="Icono de Flecha Derecha"
+                    />
+                </figure>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<style>
+    .training__list {
+        display: grid;
+        gap: 1.5rem;
+    }
+
+    .training__item {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .training__icon {
+        width: 72px;
+    }
+
+    .training__arrow {
+        width: 24px;
+        margin-left: auto;
+    }
+
+    .training__description {
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+        font-size: 1.25rem;
+    }
+</style>
