@@ -3,81 +3,81 @@ import { Image } from "astro:assets";
 ---
 
 <section class="projects">
-  <h2 class="projects__title">Proyectos</h2>
-  <div class="projects__container"></div>
+	<h2 class="projects__title">Proyectos</h2>
+	<div class="projects__container"></div>
 </section>
 
 <style>
-  .projects__container {
-    display: flex;
-    align-content: center;
-    flex-wrap: wrap;
-    width: 100%;
-    margin: 1rem 0;
-  }
+	.projects__container {
+		display: flex;
+		align-content: center;
+		flex-wrap: wrap;
+		width: 100%;
+		margin: 1rem 0;
+	}
 
-  /* article + a */
+	/* article + a */
 
-  .projects__card-link:hover .projects__card-title {
-    text-decoration: underline;
-  }
+	.projects__card-link:hover .projects__card-title {
+		text-decoration: underline;
+	}
 
-  /* article + header */
+	/* article + header */
 
-  .projects__card {
-    max-width: 20.3125rem;
-    padding: 0.5rem 1rem;
-    border: 1px solid #ccc;
-    border-radius: 0.5rem;
-  }
+	.projects__card {
+		max-width: 20.3125rem;
+		padding: 0.5rem 1rem;
+		border: 1px solid #ccc;
+		border-radius: 0.5rem;
+	}
 
-  .projects__card-description {
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-  }
+	.projects__card-description {
+		font-size: 1rem;
+		margin-bottom: 0.5rem;
+	}
 
-  .projects__card-cta {
-    font-size: 0.8438rem;
-    color: #f1f1f1;
-  }
+	.projects__card-cta {
+		font-size: 0.8438rem;
+		color: #f1f1f1;
+	}
 
-  /* article + footer */
+	/* article + footer */
 
-  .projects__tech-list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.5rem;
-  }
+	.projects__tech-list {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 0.5rem;
+	}
 
-  .projects__tech-item {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    margin: 0.5rem 0;
-  }
+	.projects__tech-item {
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+		margin: 0.5rem 0;
+	}
 
-  .projects__tech-item .projects__tech-icon {
-    width: 1.8rem;
-    height: 1.8rem;
-  }
+	.projects__tech-item .projects__tech-icon {
+		width: 1.8rem;
+		height: 1.8rem;
+	}
 
-  .projects__tech-name {
-    font-size: 1rem;
-    color: #f8f8f8;
-  }
+	.projects__tech-name {
+		font-size: 1rem;
+		color: #f8f8f8;
+	}
 
-  .projects__card-header .projects__card-title {
-    font-size: 2rem;
-    margin: 0.5rem 0;
-  }
+	.projects__card-header .projects__card-title {
+		font-size: 2rem;
+		margin: 0.5rem 0;
+	}
 
-  .projects__card-content {
-    margin: 0.5rem 0;
-  }
+	.projects__card-content {
+		margin: 0.5rem 0;
+	}
 
-  .projects__card-image,
-  .projects__tech-icon {
-    width: 100%;
-    height: auto;
-  }
+	.projects__card-image,
+	.projects__tech-icon {
+		width: 100%;
+		height: auto;
+	}
 </style>

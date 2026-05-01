@@ -1,25 +1,25 @@
 @font-face {
-  font-family: 'Inter';
-  src: url('../fonts/Inter-VariableFont_opsz,wght.ttf') format('truetype');
-  font-weight: 100 900;
-  font-style: italic;
+	font-family: 'Inter';
+	src: url('../fonts/Inter-VariableFont_opsz,wght.ttf') format('truetype');
+	font-weight: 100 900;
+	font-style: italic;
 }
 
 :root {
-  --color-negro_claro: #1e1e1e;
-  --color-blanco: #e9e9e9;
+	--color-negro_claro: #1e1e1e;
+	--color-blanco: #e9e9e9;
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 body {
-  background: var(--color-negro_claro);
-  max-width: 48.75rem;
-  margin: 0 auto;
+	background: var(--color-negro_claro);
+	max-width: 48.75rem;
+	margin: 0 auto;
 }
 
 h1,
@@ -31,36 +31,36 @@ h6,
 p,
 li,
 a {
-  margin: 0;
-  padding: 0;
-  color: var(--color-blanco);
+	margin: 0;
+	padding: 0;
+	color: var(--color-blanco);
 }
 
 a {
-  text-decoration: none;
+	text-decoration: none;
 }
 
 ul {
-  padding: 0;
-  margin: 0;
+	padding: 0;
+	margin: 0;
 }
 
 li {
-  list-style: none;
+	list-style: none;
 }
 
 img {
-  max-width: 100%;
-  height: auto;
+	max-width: 100%;
+	height: auto;
 }
 
 section {
-  display: grid;
-  place-items: center;
-  margin: 1rem 1.8rem;
+	display: grid;
+	place-items: center;
+	margin: 1rem 1.8rem;
 }
 
 section h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
+	font-size: 2rem;
+	margin-bottom: 1rem;
 }
