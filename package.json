@@ -12,4 +12,8 @@
     "@astrojs/vercel": "^8.0.5",
     "astro": "^5.2.5"
   }
+  ,
+  "devDependencies": {
+    "@types/node": "^20.0.0"
+  }
 }
