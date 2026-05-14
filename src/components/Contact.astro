@@ -1,7 +1,12 @@
+---
+import { value_web3form } from '../../data/value_web3form.js';
+---
+
 <section>
   <h2>Contacto</h2>
 
-  <form id="form" action="@/pages/api/contact" method="POST">
+  <form id="form" action="https://api.web3forms.com/submit" method="POST">
+    <input type="hidden" name="access_key" value={value_web3form} />
     <label for="name">Nombre:</label>
     <input type="text" id="name" name="name" required />
 
@@ -36,7 +41,7 @@
 
         result.innerHTML = "Cargando...";
 
-        fetch("/api/contact", {
+        fetch("https://api.web3forms.com/submit", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -45,13 +50,24 @@
           body: json,
         })
           .then(async (response) => {
-            let json = await response.json();
+            const text = await response.text();
+            let data = {};
+
+            try {
+              data = text ? JSON.parse(text) : {};
+            } catch {
+              data = { message: text };
+            }
+
             if (response.status == 200) {
               result.innerHTML =
                 "Formulario enviado con éxito. Gracias por tu mensaje.";
             } else {
               console.log(response);
-              result.innerHTML = json.message;
+              result.innerHTML =
+                data.error ||
+                data.message ||
+                "Formulario no enviado, por favor intente nuevamente.";
             }
           })
           .catch((error) => {
