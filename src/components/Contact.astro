@@ -1,11 +1,13 @@
 ---
-import { value_web3form } from '../../data/value_web3form.js';
+import { value_web3form } from "../../data/value_web3form.js";
 ---
 
 <section>
   <h2>Contacto</h2>
 
   <form id="form" action="https://api.web3forms.com/submit" method="POST">
+    <div id="result"></div>
+
     <input type="hidden" name="access_key" value={value_web3form} />
     <label for="name">Nombre:</label>
     <input type="text" id="name" name="name" required />
@@ -14,11 +16,9 @@ import { value_web3form } from '../../data/value_web3form.js';
     <input type="email" id="email" name="email" required />
 
     <label for="message">Mensaje:</label>
-    <textarea id="message" name="message" rows="5" required></textarea>
+    <textarea id="message" name="message" rows="1" required></textarea>
 
     <button type="submit">Enviar</button>
-
-    <div id="result"></div>
   </form>
 </section>
 
@@ -39,6 +39,8 @@ import { value_web3form } from '../../data/value_web3form.js';
         const object = Object.fromEntries(formData);
         const json = JSON.stringify(object);
 
+        result.className = "process";
+        result.style.display = "block";
         result.innerHTML = "Cargando...";
 
         fetch("https://api.web3forms.com/submit", {
@@ -62,8 +64,10 @@ import { value_web3form } from '../../data/value_web3form.js';
             if (response.status == 200) {
               result.innerHTML =
                 "Formulario enviado con éxito. Gracias por tu mensaje.";
+              result.className = "sent";
             } else {
               console.log(response);
+              result.className = "error";
               result.innerHTML =
                 data.error ||
                 data.message ||
@@ -72,6 +76,7 @@ import { value_web3form } from '../../data/value_web3form.js';
           })
           .catch((error) => {
             console.log(error);
+            result.className = "error";
             result.innerHTML =
               "Formulario no enviado, por favor intente nuevamente.";
           })
@@ -122,6 +127,7 @@ import { value_web3form } from '../../data/value_web3form.js';
     resize: vertical;
     min-height: 100px;
     max-height: 300px;
+    font-family: "Inter", sans-serif;
   }
 
   button {
@@ -135,5 +141,25 @@ import { value_web3form } from '../../data/value_web3form.js';
   button:hover {
     background: #ffa500;
     color: var(--color-oscuro);
+  }
+
+  #result {
+    display: none;
+    color: var(--color-negro);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+  }
+
+  #result.process {
+    background: #ffa500;
+  }
+
+  #result.sent {
+    background: #23a706;
+  }
+
+  #result.error {
+    background: #b71d0c;
+    color: var(--color-blanco);
   }
 </style>
