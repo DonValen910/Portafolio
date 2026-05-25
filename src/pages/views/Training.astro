@@ -1,62 +1,98 @@
 ---
 import { Image } from "astro:assets";
+import Modal from "@/components/Modal.astro";
 import Escuela from "@/assets/escuela.svg";
 import EscuelaFinalizada from "@/assets/escuelaFinalizada.svg";
 import FlechaDerecha from "@/assets/flechaDerecha.svg";
 import ImageDiplomaJFK from "@/assets/DiplomaJFK.jpg";
+
+const diplomaModalId = "training-jfk";
+
+const trainings = [
+  {
+    title: "Escuela Da Vinci",
+    subtitle: "Diseño y Desarrollo Web (2025 - presente)",
+    icon: Escuela,
+    iconAlt: "Icono de Escuela",
+    completed: false,
+  },
+  {
+    title: "EEST N.° 5 de Lanús John F. Kennedy",
+    subtitle: "Técnico en Programación (2018 - 2024)",
+    icon: EscuelaFinalizada,
+    iconAlt: "Icono de Escuela Finalizada",
+    completed: true,
+    modalId: diplomaModalId,
+  },
+];
 ---
 
 <section>
   <h2 class="training__title">Formación</h2>
   <ul class="training__list">
-    <li class="training__item">
-      <figure class="training__icon">
-        <Image src={Escuela} alt="Icono de Escuela" />
-      </figure>
-      <div class="training__description">
-        <strong>Escuela Da Vinci</strong>
-        <span>Diseño y Desarrollo Web (2025 - presente)</span>
-      </div>
-      <figure class="training__arrow">
-        <Image src={FlechaDerecha} alt="Icono de Flecha Derecha" />
-      </figure>
-    </li>
-    <li class="training__item" id="escuela_tecnica">
-      <figure class="training__icon">
-        <Image src={EscuelaFinalizada} alt="Icono de Escuela Finalizada" />
-      </figure>
-      <div class="training__description">
-        <strong>EEST N.° 5 de Lanús “John F. Kennedy”</strong>
-        <span>Técnico en Programación (2018 - 2024)</span>
-      </div>
-      <figure class="training__arrow">
-        <Image src={FlechaDerecha} alt="Icono de Flecha Derecha" />
-      </figure>
-    </li>
+    {trainings.map((training) => (
+      <li>
+        <div
+          class:list={["training__item", { "training__item--completed": training.completed }]}
+          data-micromodal-trigger={training.completed ? `modal-${training.modalId}` : undefined}
+          role={training.completed ? "button" : undefined}
+          tabindex={training.completed ? "0" : undefined}
+          aria-label={
+            training.completed
+              ? `Ver diploma de ${training.title}`
+              : `${training.title} en curso`
+          }
+        >
+          <figure class="training__icon">
+            <Image src={training.icon} alt={training.iconAlt} />
+          </figure>
+          <div class="training__description">
+            <strong>{training.title}</strong>
+            <span>{training.subtitle}</span>
+          </div>
+          <figure class="training__arrow" aria-hidden="true">
+            <Image src={FlechaDerecha} alt="Icono de Flecha Derecha" />
+          </figure>
+        </div>
+      </li>
+    ))}
   </ul>
-</section>
 
-<script>
-	const escuelaTecnica = document.getElementById("escuela_tecnica");
-  if (escuelaTecnica) {
-    escuelaTecnica.addEventListener("click", () => {
-			alert("Diploma de Técnico en Programación de la EEST N.° 5 de Lanús “John F. Kennedy”");
-    });
-  }
-</script>
+  <Modal id={diplomaModalId} title="EEST N.° 5 de Lanús “John F. Kennedy”">
+    <figure class="training__diploma">
+      <Image
+        src={ImageDiplomaJFK}
+        alt="Diploma de Técnico en Programación de EEST N.° 5 de Lanús John F. Kennedy"
+      />
+    </figure>
+  </Modal>
+</section>
 
 <style>
   .training__list {
     width: 100%;
     display: grid;
     gap: 1.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
   }
 
   .training__item {
     display: flex;
     align-items: center;
     gap: 1.5rem;
-		cursor: pointer;
+    cursor: default;
+    border-radius: 0.75rem;
+  }
+
+  .training__item--completed {
+    cursor: pointer;
+  }
+
+  .training__item--completed:focus-visible {
+    outline: 2px solid #1f2937;
+    outline-offset: 4px;
   }
 
   .training__icon {
@@ -73,5 +109,16 @@ import ImageDiplomaJFK from "@/assets/DiplomaJFK.jpg";
     flex-direction: column;
     gap: 0.5rem;
     font-size: 1.25rem;
+  }
+
+  .training__diploma {
+    margin: 0;
+  }
+
+  .training__diploma img {
+    width: min(100%, 720px);
+    height: auto;
+    border-radius: 0.75rem;
+    display: block;
   }
 </style>
