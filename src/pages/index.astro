@@ -1,18 +1,20 @@
 ---
-import Layout from '@/layouts/Layout.astro';
-import Header from '@/components/Header.astro';
-import Skill from '@/components/Skill.astro';
-import Projects from '@/components/Projects.astro';
-import AboutMe from '@/components/AboutMe.astro';
-import Training from '@/components/Training.astro';
-import Contact from '@/components/Contact.astro';
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Skill from "./views/Skill.astro";
+import Projects from "./views/Projects.astro";
+import AboutMe from "./views/AboutMe.astro";
+import Training from "./views/Training.astro";
+import Contact from "./views/Contact.astro";
 ---
 
 <Layout>
-	<Header />
-	<AboutMe />
-	<Skill />
-	<Projects />
-	<Training />
-	<Contact />
+  <Header />
+  <main>
+    <AboutMe />
+    <Skill />
+    <Projects />
+    <Training />
+    <Contact />
+  </main>
 </Layout>
