@@ -1,0 +1,81 @@
+---
+const { id, title = "Detalle" } = Astro.props;
+---
+
+<div class="modal" id={`modal-${id}`} aria-hidden="true">
+  <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+    <div
+      class="modal__container"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby={`modal-${id}-title`}
+      aria-describedby={`modal-${id}-content`}
+    >
+      <header class="modal__header">
+        <h2 class="modal__title" id={`modal-${id}-title`}>{title}</h2>
+        <button class="modal__close" aria-label="Cerrar modal" data-micromodal-close>
+          &times;
+        </button>
+      </header>
+
+      <div class="modal__content" id={`modal-${id}-content`}>
+        <slot />
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .modal {
+    display: none;
+  }
+
+  .modal.is-open {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+  }
+
+  .modal__overlay {
+    position: fixed;
+    inset: 0;
+    background: rgb(17 24 39 / 0.75);
+    display: grid;
+    place-items: center;
+    padding: 1rem;
+  }
+
+  .modal__container {
+    width: min(920px, 100%);
+    max-height: calc(100vh - 2rem);
+    overflow: auto;
+    background: #ffffff;
+    border-radius: 1rem;
+    padding: 1.25rem;
+  }
+
+  .modal__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .modal__title {
+    margin: 0;
+  }
+
+  .modal__close {
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    font-size: 1.75rem;
+    line-height: 1;
+  }
+
+  .modal__content {
+    margin: 0;
+  }
+</style>
