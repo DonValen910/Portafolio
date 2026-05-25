@@ -14,6 +14,15 @@ import "../styles/global.css";
 	</head>
 	<body>
 		<slot />
+		<script>
+			// @ts-ignore
+			import MicroModal from "micromodal";
+
+			MicroModal.init({
+				awaitOpenAnimation: false,
+				awaitCloseAnimation: false,
+			});
+		</script>
 	</body>
 </html>
 
