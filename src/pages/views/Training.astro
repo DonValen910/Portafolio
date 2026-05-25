@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 import Escuela from "@/assets/escuela.svg";
 import EscuelaFinalizada from "@/assets/escuelaFinalizada.svg";
 import FlechaDerecha from "@/assets/flechaDerecha.svg";
+import ImageDiplomaJFK from "@/assets/DiplomaJFK.jpg";
 ---
 
 <section>
@@ -20,7 +21,7 @@ import FlechaDerecha from "@/assets/flechaDerecha.svg";
         <Image src={FlechaDerecha} alt="Icono de Flecha Derecha" />
       </figure>
     </li>
-    <li class="training__item">
+    <li class="training__item" id="escuela_tecnica">
       <figure class="training__icon">
         <Image src={EscuelaFinalizada} alt="Icono de Escuela Finalizada" />
       </figure>
@@ -34,6 +35,15 @@ import FlechaDerecha from "@/assets/flechaDerecha.svg";
     </li>
   </ul>
 </section>
+
+<script>
+	const escuelaTecnica = document.getElementById("escuela_tecnica");
+  if (escuelaTecnica) {
+    escuelaTecnica.addEventListener("click", () => {
+			alert("Diploma de Técnico en Programación de la EEST N.° 5 de Lanús “John F. Kennedy”");
+    });
+  }
+</script>
 
 <style>
   .training__list {
