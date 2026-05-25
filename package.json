@@ -10,7 +10,8 @@
   },
   "dependencies": {
     "@astrojs/vercel": "^8.0.5",
-    "astro": "^5.2.5"
+    "astro": "^5.2.5",
+    "micromodal": "^0.6.1"
   },
   "devDependencies": {
     "@types/node": "^20.0.0"
