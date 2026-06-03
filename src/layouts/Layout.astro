@@ -1,4 +1,13 @@
 ---
+import { getImage } from "astro:assets";
+import ImageDiplomaJFK from "@/assets/diploma/JFK.webp";
+
+const imagenes = await Promise.all([
+	getImage({
+		src: ImageDiplomaJFK,
+	}),
+])
+
 import "../styles/global.css";
 ---
 
@@ -11,6 +20,14 @@ import "../styles/global.css";
 		<link rel="icon" type="image/svg+xml" href="/logo.webp" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Portafolio Valentín Tito</title>
+
+		{imagenes.map(img => (
+			<link
+				rel="preload"
+				as="image"
+				href={img.src}
+			/>
+		))}
 	</head>
 	<body>
 		<slot />
