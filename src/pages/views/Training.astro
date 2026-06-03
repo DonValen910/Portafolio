@@ -30,32 +30,39 @@ const trainings = [
 <section>
   <h2 class="training__title">Formación</h2>
   <ul class="training__list">
-    {trainings.map((training) => (
-      <li>
-        <div
-          class:list={["training__item", { "training__item--completed": training.completed }]}
-          data-micromodal-trigger={training.completed ? `modal-${training.modalId}` : undefined}
-          role={training.completed ? "button" : undefined}
-          tabindex={training.completed ? "0" : undefined}
-          aria-label={
-            training.completed
-              ? `Ver diploma de ${training.title}`
-              : `${training.title} en curso`
-          }
-        >
-          <figure class="training__icon">
-            <Image src={training.icon} alt={training.iconAlt} />
-          </figure>
-          <div class="training__description">
-            <strong>{training.title}</strong>
-            <span>{training.subtitle}</span>
+    {
+      trainings.map((training) => (
+        <li>
+          <div
+            class:list={[
+              "training__item",
+              { "training__item--completed": training.completed },
+            ]}
+            data-micromodal-trigger={
+              training.completed ? `modal-${training.modalId}` : undefined
+            }
+            role={training.completed ? "button" : undefined}
+            tabindex={training.completed ? "0" : undefined}
+            aria-label={
+              training.completed
+                ? `Ver diploma de ${training.title}`
+                : `${training.title} en curso`
+            }
+          >
+            <figure class="training__icon">
+              <Image src={training.icon} alt={training.iconAlt} />
+            </figure>
+            <div class="training__description">
+              <strong>{training.title}</strong>
+              <span>{training.subtitle}</span>
+            </div>
+            <figure class="training__arrow" aria-hidden="true">
+              <Image src={FlechaDerecha} alt="Icono de Flecha Derecha" />
+            </figure>
           </div>
-          <figure class="training__arrow" aria-hidden="true">
-            <Image src={FlechaDerecha} alt="Icono de Flecha Derecha" />
-          </figure>
-        </div>
-      </li>
-    ))}
+        </li>
+      ))
+    }
   </ul>
 
   <Modal id={diplomaModalId} title="EEST N.° 5 de Lanús “John F. Kennedy”">
@@ -113,6 +120,7 @@ const trainings = [
 
   .training__diploma {
     margin: 0;
+    aspect-ratio: 4 / 3;
   }
 
   .training__diploma img {
