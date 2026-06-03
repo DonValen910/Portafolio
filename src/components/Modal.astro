@@ -50,7 +50,7 @@ const { id, title = "Detalle" } = Astro.props;
     width: min(920px, 100%);
     max-height: calc(100vh - 2rem);
     overflow: auto;
-    background: #ffffff;
+    background: var(--color-negro_claro);
     border-radius: 1rem;
     padding: 1.25rem;
   }
@@ -70,6 +70,7 @@ const { id, title = "Detalle" } = Astro.props;
   .modal__close {
     border: 0;
     background: transparent;
+    color: var(--color-blanco);
     cursor: pointer;
     font-size: 1.75rem;
     line-height: 1;
