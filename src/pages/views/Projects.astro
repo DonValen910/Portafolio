@@ -1,83 +1,93 @@
 ---
-import { Image } from "astro:assets";
+import Card from "@/components/Card.astro";
 ---
 
 <section class="projects">
-	<h2 class="projects__title">Proyectos</h2>
-	<div class="projects__container"></div>
+  <h2 class="projects__title">Proyectos</h2>
+  <div class="projects__container">
+    <Card
+      title="Flicka"
+      description="Flicka es una web que te permite buscar películas, ver sus detalles y añadirlas a tu lista de favoritos. Está construida con Vue.js, CSS y utiliza la API de The Movie Database (TMDB) para obtener información sobre las películas."
+      image="/src/assets/diploma/JFK.webp"
+      alt="Imagen del proyecto Portfolio"
+      link="https://adm-parcial-2.vercel.app/"
+      repo="https://github.com/titoValen/adm-parcial-2"
+    />
+    <Card
+      title="StepUp"
+      description="StepUp es un proyecto de e-commerce de zapatillas. Está construido con PHP, MySQL, HTML, CSS y JavaScript. Permite a los usuarios navegar por una variedad de zapatillas, agregarlas al carrito de compras y realizar pedidos. El proyecto también incluye un CRUD para la gestión de productos, usuarios y demás funcionalidades administrativas."
+      image="/src/assets/diploma/JFK.webp"
+      alt="Imagen del proyecto E-commerce"
+      repo="https://github.com/titoValen/parcial-n-2-programacion-II"
+    />
+  </div>
 </section>
 
 <style>
-	.projects__container {
-		display: flex;
-		align-content: center;
-		flex-wrap: wrap;
-		width: 100%;
-		margin: 1rem 0;
-	}
+  .projects__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    margin: 1rem 0;
+  }
 
-	/* article + a */
+  .projects__card-link:hover .projects__card-title {
+    text-decoration: underline;
+  }
 
-	.projects__card-link:hover .projects__card-title {
-		text-decoration: underline;
-	}
+  .projects__card {
+    max-width: 20.3125rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+  }
 
-	/* article + header */
+  .projects__card-description {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
 
-	.projects__card {
-		max-width: 20.3125rem;
-		padding: 0.5rem 1rem;
-		border: 1px solid #ccc;
-		border-radius: 0.5rem;
-	}
+  .projects__card-cta {
+    font-size: 0.8438rem;
+    color: #f1f1f1;
+  }
 
-	.projects__card-description {
-		font-size: 1rem;
-		margin-bottom: 0.5rem;
-	}
+  .projects__tech-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+  }
 
-	.projects__card-cta {
-		font-size: 0.8438rem;
-		color: #f1f1f1;
-	}
+  .projects__tech-item {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0.5rem 0;
+  }
 
-	/* article + footer */
+  .projects__tech-item .projects__tech-icon {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
 
-	.projects__tech-list {
-		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-		gap: 0.5rem;
-	}
+  .projects__tech-name {
+    font-size: 1rem;
+    color: #f8f8f8;
+  }
 
-	.projects__tech-item {
-		display: flex;
-		justify-content: space-evenly;
-		align-items: center;
-		margin: 0.5rem 0;
-	}
+  .projects__card-header .projects__card-title {
+    font-size: 2rem;
+    margin: 0.5rem 0;
+  }
 
-	.projects__tech-item .projects__tech-icon {
-		width: 1.8rem;
-		height: 1.8rem;
-	}
+  .projects__card-content {
+    margin: 0.5rem 0;
+  }
 
-	.projects__tech-name {
-		font-size: 1rem;
-		color: #f8f8f8;
-	}
-
-	.projects__card-header .projects__card-title {
-		font-size: 2rem;
-		margin: 0.5rem 0;
-	}
-
-	.projects__card-content {
-		margin: 0.5rem 0;
-	}
-
-	.projects__card-image,
-	.projects__tech-icon {
-		width: 100%;
-		height: auto;
-	}
+  .projects__card-image,
+  .projects__tech-icon {
+    width: 100%;
+    height: auto;
+  }
 </style>
