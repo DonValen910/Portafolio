@@ -1,0 +1,135 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  image: string;
+  alt: string;
+  link?: string;
+  repo?: string;
+}
+
+const { title, description, image, alt, link, repo } = Astro.props;
+
+const hasProjectLink = typeof link === "string" && link.trim().length > 0;
+const hasRepoLink = typeof repo === "string" && repo.trim().length > 0;
+---
+
+<div class="card">
+  <figure class="card__image">
+    <img src={image} alt={alt} />
+  </figure>
+  <div class="card__content">
+    <h3>{title}</h3>
+    <p>{description}</p>
+  </div>
+  <div class="card__footer">
+    {
+      hasProjectLink ? (
+        <a
+          class="card__footer-proyect"
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Ir al proyecto
+        </a>
+      ) : (
+        <span
+          class="card__footer-proyect card__footer--disabled"
+          aria-disabled="true"
+        >
+          No hay web
+        </span>
+      )
+    }
+    {
+      hasRepoLink ? (
+        <a
+          class="card__footer-repository"
+          href={repo}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Ver repositorio
+        </a>
+      ) : (
+        <span
+          class="card__footer-repository card__footer--disabled"
+          aria-disabled="true"
+        >
+          No hay repositorio
+        </span>
+      )
+    }
+  </div>
+</div>
+
+<style>
+  .card {
+    max-width: 350px;
+    padding: 0.75rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 1rem;
+  }
+
+  .card__image img {
+    border-radius: 0.5rem;
+  }
+
+  .card__content h3 {
+    font-size: 1.25rem;
+    margin-top: 0.25rem;
+  }
+
+  .card__content p {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+  }
+
+  .card__footer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .card__footer a,
+  .card__footer span {
+    flex: 1;
+    font-size: 1rem;
+    color: var(--color-blanco);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    display: block;
+    transition: background-color 0.3s ease;
+  }
+
+  .card__footer-proyect {
+    background-color: #a32252;
+  }
+
+  .card__footer-proyect:hover {
+    background-color: #831b41;
+  }
+
+  .card__footer-repository {
+    background-color: #1e1e1e;
+    border: 1px solid #ccc;
+  }
+
+  .card__footer-repository:hover {
+    background-color: #333;
+  }
+
+  .card__footer--disabled {
+    background-color: #8a8a8a;
+    border: 1px solid #a3a3a3;
+    cursor: default;
+    pointer-events: none;
+  }
+
+  .card__footer--disabled:hover {
+    background-color: #8a8a8a;
+  }
+</style>
