@@ -6,7 +6,7 @@ import { value_web3form } from "../../../data/value_web3form.js";
   <h2>Contacto</h2>
 
   <form id="form" action="https://api.web3forms.com/submit" method="POST">
-    <div id="result"></div>
+    <div id="result" aria-live="polite"></div>
 
     <input type="hidden" name="access_key" value={value_web3form} />
     <label for="name">Nombre:</label>
@@ -28,6 +28,10 @@ import { value_web3form } from "../../../data/value_web3form.js";
     () => {
       const form = document.getElementById("form");
       const result = document.getElementById("result");
+
+      if (!(form instanceof HTMLFormElement) || !(result instanceof HTMLElement)) {
+        return;
+      }
 
       form.addEventListener("submit", function (e) {
         e.preventDefault();
@@ -139,8 +143,8 @@ import { value_web3form } from "../../../data/value_web3form.js";
   }
 
   button:hover {
-    background: #ffa500;
-    color: var(--color-oscuro);
+    background: var(--color-acento);
+    color: var(--color-negro);
   }
 
   #result {
