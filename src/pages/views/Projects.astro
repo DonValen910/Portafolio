@@ -1,5 +1,7 @@
 ---
 import Card from "@/components/Card.astro";
+import flickaImage from "@/assets/proyects/flicka.png";
+import stepupImage from "@/assets/proyects/stepup.png";
 ---
 
 <section class="projects">
@@ -8,7 +10,7 @@ import Card from "@/components/Card.astro";
     <Card
       title="Flicka"
       description="Flicka es una web que te permite buscar películas, ver sus detalles y añadirlas a tu lista de favoritos. Está construida con Vue.js, CSS y utiliza la API de The Movie Database (TMDB) para obtener información sobre las películas."
-      image="/src/assets/diploma/JFK.webp"
+      image={flickaImage}
       alt="Imagen del proyecto Portfolio"
       link="https://adm-parcial-2.vercel.app/"
       repo="https://github.com/titoValen/adm-parcial-2"
@@ -16,7 +18,7 @@ import Card from "@/components/Card.astro";
     <Card
       title="StepUp"
       description="StepUp es un proyecto de e-commerce de zapatillas. Está construido con PHP, MySQL, HTML, CSS y JavaScript. Permite a los usuarios navegar por una variedad de zapatillas, agregarlas al carrito de compras y realizar pedidos. El proyecto también incluye un CRUD para la gestión de productos, usuarios y demás funcionalidades administrativas."
-      image="/src/assets/diploma/JFK.webp"
+      image={stepupImage}
       alt="Imagen del proyecto E-commerce"
       repo="https://github.com/titoValen/parcial-n-2-programacion-II"
     />
@@ -25,11 +27,17 @@ import Card from "@/components/Card.astro";
 
 <style>
   .projects__container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
     width: 100%;
     margin: 1rem 0;
+  }
+
+  @media (max-width: 650px) {
+    .projects__container {
+      grid-template-columns: 1fr;
+    }
   }
 
   .projects__card-link:hover .projects__card-title {
