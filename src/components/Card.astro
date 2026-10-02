@@ -1,8 +1,10 @@
 ---
+import { Image } from "astro:assets";
+
 interface Props {
   title: string;
   description: string;
-  image: string;
+  image: ImageMetadata;
   alt: string;
   link?: string;
   repo?: string;
@@ -16,7 +18,7 @@ const hasRepoLink = typeof repo === "string" && repo.trim().length > 0;
 
 <div class="card">
   <figure class="card__image">
-    <img src={image} alt={alt} />
+    <Image src={image} alt={alt} />
   </figure>
   <div class="card__content">
     <h3>{title}</h3>
@@ -66,13 +68,15 @@ const hasRepoLink = typeof repo === "string" && repo.trim().length > 0;
 
 <style>
   .card {
-    max-width: 350px;
+    width: 100%;
     padding: 0.75rem 1rem;
     border: 1px solid #ccc;
     border-radius: 1rem;
   }
 
   .card__image img {
+    display: block;
+    width: 100%;
     border-radius: 0.5rem;
   }
 
