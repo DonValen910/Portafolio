@@ -61,9 +61,12 @@ import CV from "../assets/icon/cv.svg";
 <style>
   .header {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    padding: 3rem 0;
+    gap: clamp(1.5rem, 6vw, 4rem);
+    width: min(calc(100% - 2rem), 52rem);
+    margin: 0 auto;
+    padding: clamp(1.5rem, 6vw, 3rem) 0;
   }
 
   .header__title {
@@ -87,8 +90,8 @@ import CV from "../assets/icon/cv.svg";
   }
 
   .header__figure {
-		width: 300px;
-		height: 300px;
+    width: clamp(150px, 35vw, 300px);
+    height: clamp(150px, 35vw, 300px);
     margin: 0;
     overflow: hidden;
     display: flex;
@@ -133,6 +136,10 @@ import CV from "../assets/icon/cv.svg";
     .header {
       flex-direction: column;
       gap: 1rem;
+    }
+
+    .header__title {
+      text-align: center;
     }
   }
 </style>
